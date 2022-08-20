@@ -1,0 +1,13 @@
+﻿<appbar:AppBarWindow x:Class="Unimmersive.Shell.Taskbar"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:appbar="clr-namespace:ManagedShell.AppBar;assembly=ManagedShell.AppBar" LocationChanged="Taskbar_OnLocationChanged">
+    <Grid>
+        <TextBlock TextAlignment="Center">Hello World!</TextBlock>
+    </Grid>
+    <appbar:AppBarWindow.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Close" Click="Close_OnClick"/>
+        </ContextMenu>
+    </appbar:AppBarWindow.ContextMenu>
+</appbar:AppBarWindow>

@@ -1,0 +1,10 @@
+﻿<Application x:Class="Unimmersive.Shell.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Unimmersive.Shell"
+             Exit="App_OnExit"
+             SessionEnding="App_OnSessionEnding">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
