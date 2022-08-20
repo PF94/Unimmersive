@@ -14,12 +14,14 @@
                 <GradientStop Color="#FF272727" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <WrapPanel x:Name="TilesPanel" Margin="10,10,10,10" Loaded="onPanelLoaded">
-            <WrapPanel.Resources>
-                <Style TargetType="{x:Type Controls1:Tile}">
-                    <Setter Property="Padding" Value="5,5" />
-                </Style>
-            </WrapPanel.Resources>
-        </WrapPanel>
+        <ScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="10,10,10,10">
+            <WrapPanel x:Name="TilesPanel" Margin="10,10,10,10" Loaded="onPanelLoaded" Width="{Binding ElementName=ScrollViewer, Path=ViewportWidth}">
+                <WrapPanel.Resources>
+                    <Style TargetType="{x:Type Controls1:Tile}">
+                        <Setter Property="Padding" Value="5,5" />
+                    </Style>
+                </WrapPanel.Resources>
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

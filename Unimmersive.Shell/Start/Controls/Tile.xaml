@@ -6,8 +6,13 @@
              xmlns:local="clr-namespace:Unimmersive.Shell.Start.Controls"
              mc:Ignorable="d">
     <Grid Height="160" Width="160">
-        <Rectangle HorizontalAlignment="Left" Height="160" Stroke="Black" VerticalAlignment="Top" Width="160" Fill="#FF6F6F6F"/>
-        <Label x:Name="TileName" Content="Label" Margin="5,79,10,10" FontSize="14"/>
+        <Rectangle x:Name="TileBox" HorizontalAlignment="Left" Height="160" Stroke="#FF00FF56" VerticalAlignment="Top" Width="160" Fill="#FF6F6F6F"/>
+        <!--<Label x:Name="TileName" Content="This is a placeholder name for a tile." Margin="5,79,10,10" FontSize="14"/>-->
+        <Label Margin="0,80,0,0" FontSize="14">
+            <Label.Content>
+                <AccessText x:Name="TileName" TextWrapping="Wrap" Text="This is a placeholder name for a tile." Foreground="Red"/>
+            </Label.Content>
+        </Label>
         <Image x:Name="TileIcon" Margin="10,10,85,86" Source="/Resources/iconplaceholder.png" Height="64"/>
     </Grid>
 </UserControl>
