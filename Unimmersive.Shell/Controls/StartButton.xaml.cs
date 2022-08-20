@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Unimmersive.Shell.Controls
 {
@@ -20,14 +8,31 @@ namespace Unimmersive.Shell.Controls
     /// </summary>
     public partial class StartButton : UserControl
     {
+        public static DependencyProperty HostProperty = DependencyProperty.Register("Host", typeof(Taskbar), typeof(StartButton));
+
+        public Taskbar Host
+        {
+            get { return (Taskbar)GetValue(HostProperty); }
+            set { SetValue(HostProperty, value); }
+        }
+
         public StartButton()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!Host._startShown)
+            {
+                Host._start.Show();
+                Host._startShown = true;
+            }
+            else
+            {
+                Host._start.Hide();
+                Host._startShown = false;
+            }
         }
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-using ManagedShell;
+﻿using ManagedShell;
 using ManagedShell.AppBar;
 using ManagedShell.Common.Enums;
+using System.Windows;
 
 namespace Unimmersive.Shell
 {
@@ -18,6 +12,7 @@ namespace Unimmersive.Shell
     {
         private Taskbar _appBar;
         private readonly ShellManager _shellManager;
+
         public App()
         {
             // Initialize the default configuration.

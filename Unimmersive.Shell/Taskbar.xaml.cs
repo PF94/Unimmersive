@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using ManagedShell;
+﻿using ManagedShell;
 using ManagedShell.AppBar;
 using ManagedShell.Interop;
+using System;
+using System.Windows;
+using Unimmersive.Shell.Start;
 
 namespace Unimmersive.Shell
 {
@@ -22,12 +12,18 @@ namespace Unimmersive.Shell
     /// </summary>
     public partial class Taskbar : AppBarWindow
     {
+        public StartScreen _start;
+        public bool _startShown;
         public Taskbar(ShellManager shellManager, AppBarScreen screen, AppBarEdge edge, double desiredHeight)
             : base(shellManager.AppBarManager, shellManager.ExplorerHelper, shellManager.FullScreenHelper, screen, edge, desiredHeight)
         {
             InitializeComponent();
 
             _explorerHelper.HideExplorerTaskbar = true;
+
+            // Initalize start screen, needed for start button.
+            _start = new StartScreen();
+            _startShown = false;
         }
 
         protected override void CustomClosing()

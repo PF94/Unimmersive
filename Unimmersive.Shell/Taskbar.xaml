@@ -1,13 +1,15 @@
-﻿<appbar:AppBarWindow x:Class="Unimmersive.Shell.Taskbar"
+﻿<appbar:AppBarWindow
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:appbar="clr-namespace:ManagedShell.AppBar;assembly=ManagedShell.AppBar" LocationChanged="Taskbar_OnLocationChanged">
-    <Grid>
-        <TextBlock TextAlignment="Center">Hello World!</TextBlock>
-    </Grid>
+                     xmlns:appbar="clr-namespace:ManagedShell.AppBar;assembly=ManagedShell.AppBar" xmlns:Controls="clr-namespace:Unimmersive.Shell.Controls" x:Class="Unimmersive.Shell.Taskbar"
+                     LocationChanged="Taskbar_OnLocationChanged">
     <appbar:AppBarWindow.ContextMenu>
         <ContextMenu>
             <MenuItem Header="Close" Click="Close_OnClick"/>
         </ContextMenu>
     </appbar:AppBarWindow.ContextMenu>
+    <DockPanel>
+        <Controls:StartButton HorizontalAlignment="Left" VerticalAlignment="Center" Host="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"/>
+        <TextBlock TextAlignment="Center"><Run Text="Hello World!"/></TextBlock>
+    </DockPanel>
 </appbar:AppBarWindow>

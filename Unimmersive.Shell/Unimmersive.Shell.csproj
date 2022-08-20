@@ -11,8 +11,4 @@
     <PackageReference Include="ManagedShell" Version="0.0.186" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Start\" />
-  </ItemGroup>
-
 </Project>
