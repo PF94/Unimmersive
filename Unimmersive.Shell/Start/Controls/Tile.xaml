@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Unimmersive.Shell.Start.Controls.Tile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Unimmersive.Shell.Start.Controls"
+             mc:Ignorable="d">
+    <Grid Height="160" Width="160">
+        <Rectangle HorizontalAlignment="Left" Height="160" Stroke="Black" VerticalAlignment="Top" Width="160" Fill="#FF6F6F6F"/>
+        <Label x:Name="TileName" Content="Label" Margin="5,79,10,10" FontSize="14"/>
+        <Image x:Name="TileIcon" Margin="10,10,85,86" Source="/Resources/iconplaceholder.png" Height="64"/>
+    </Grid>
+</UserControl>
