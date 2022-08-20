@@ -5,7 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Unimmersive.Shell.Start.Controls"
              mc:Ignorable="d">
-    <Grid Height="160" Width="160">
+    <Grid Height="160" Width="160" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform x:Name="Size" ScaleX="1" ScaleY="1"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Rectangle x:Name="TileBox" HorizontalAlignment="Left" Height="160" Stroke="#FF00FF56" VerticalAlignment="Top" Width="160" Fill="#FF6F6F6F"/>
         <!--<Label x:Name="TileName" Content="This is a placeholder name for a tile." Margin="5,79,10,10" FontSize="14"/>-->
         <Label Margin="0,80,0,0" FontSize="14">
@@ -15,4 +20,42 @@
         </Label>
         <Image x:Name="TileIcon" Margin="10,10,85,86" Source="/Resources/iconplaceholder.png" Height="64"/>
     </Grid>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="MouseEnter">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetName="Size"
+              Storyboard.TargetProperty="ScaleX"
+              From="1" To="1.05" Duration="00:00:00.05"/>
+                </Storyboard>
+            </BeginStoryboard>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetName="Size"
+              Storyboard.TargetProperty="ScaleY"
+              From="1" To="1.05" Duration="00:00:00.05"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="MouseLeave">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetName="Size"
+              Storyboard.TargetProperty="ScaleX"
+              From="1.05" To="1" Duration="00:00:00.25"/>
+                </Storyboard>
+            </BeginStoryboard>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetName="Size"
+              Storyboard.TargetProperty="ScaleY"
+              From="1.05" To="1" Duration="00:00:00.25"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
 </UserControl>

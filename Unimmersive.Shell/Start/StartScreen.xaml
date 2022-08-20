@@ -4,17 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unimmersive.Shell.Start"
-        xmlns:Controls="clr-namespace:Unimmersive.Shell.Controls" xmlns:Controls1="clr-namespace:Unimmersive.Shell.Start.Controls" x:Name="Screen" x:Class="Unimmersive.Shell.Start.StartScreen"
+        xmlns:Controls="clr-namespace:Unimmersive.Shell.Controls" 
+        xmlns:Controls1="clr-namespace:Unimmersive.Shell.Start.Controls" xmlns:system="clr-namespace:System;assembly=mscorlib"
+    x:Name="Screen" 
+        x:Class="Unimmersive.Shell.Start.StartScreen"
         mc:Ignorable="d"
-        Title="Start Screen" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="OnClosing" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None">
+        Title="Start Screen" 
+        Height="500" Width="800" 
+        WindowStartupLocation="CenterScreen"
+        Closing="OnClosing" 
+        ShowInTaskbar="False" 
+        WindowState="Maximized"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="DimGray"/>
-                <GradientStop Color="#FF272727" Offset="1"/>
-            </LinearGradientBrush>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF0F5B75" Offset="0"/>
+                <GradientStop Color="#FF19405A" Offset="1"/>
+            </RadialGradientBrush>
         </Grid.Background>
-        <ScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="10,10,10,10">
+        <ScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="10,75,10,10">
             <WrapPanel x:Name="TilesPanel" Margin="10,10,10,10" Loaded="onPanelLoaded" Width="{Binding ElementName=ScrollViewer, Path=ViewportWidth}">
                 <WrapPanel.Resources>
                     <Style TargetType="{x:Type Controls1:Tile}">
@@ -23,5 +32,6 @@
                 </WrapPanel.Resources>
             </WrapPanel>
         </ScrollViewer>
+        <Label x:Name="startText" Content="Start" HorizontalAlignment="Left" Height="60" Margin="15,10,0,0" VerticalAlignment="Top" Width="775" FontSize="36" FontFamily="Segoe UI Light" Foreground="White" RenderTransformOrigin="4,0"/>
     </Grid>
 </Window>

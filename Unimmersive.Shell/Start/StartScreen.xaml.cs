@@ -34,7 +34,7 @@ namespace Unimmersive.Shell.Start
             foreach (var app in (IKnownFolder)appsFolder)
             {
                 Tile tile = new Tile();
-                tile.TileIcon.Source = app.Thumbnail.SmallBitmapSource;
+                tile.TileIcon.Source = app.Thumbnail.MediumBitmapSource;
                 System.Drawing.Color colorBG = ColorMethods.GetDominantColor(app.Thumbnail.SmallBitmap);
                 System.Drawing.Color colorBR = ColorMethods.ChangeColorBrightness(colorBG, -0.5f);
                 System.Drawing.Color colorFG = ColorMethods.IdealTextColor(colorBG);
