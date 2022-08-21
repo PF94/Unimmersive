@@ -6,6 +6,6 @@
              xmlns:local="clr-namespace:Unimmersive.Shell.Controls"
              mc:Ignorable="d">
     <Grid>
-        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Click="StartButton_Click" Width="100"/>
+        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Click="StartButton_Click" Width="40" Height="40"/>
     </Grid>
 </UserControl>

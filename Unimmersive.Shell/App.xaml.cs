@@ -29,7 +29,7 @@ namespace Unimmersive.Shell
             // Initialize the tasks service, since we disabled auto-start above.
             _shellManager.Tasks.Initialize();
 
-            _appBar = new Taskbar(_shellManager, AppBarScreen.FromPrimaryScreen(), AppBarEdge.Bottom, 30);
+            _appBar = new Taskbar(_shellManager, AppBarScreen.FromPrimaryScreen(), AppBarEdge.Bottom, 40);
             _appBar.Show();
         }
 
