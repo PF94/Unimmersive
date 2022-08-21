@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,18 @@ namespace Unimmersive.Shell.Start.Controls
     /// </summary>
     public partial class Tile : UserControl
     {
+        public string Executable { get; internal set; }
+
         public Tile()
         {
             InitializeComponent();
+        }
+
+        private void TileClick(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine("Clicked Tile, Executable: " + Executable);
+            Process.Start("explorer.exe", @" shell:appsFolder\" + Executable);
+            Window.GetWindow(this).Hide();
         }
     }
 }

@@ -23,7 +23,6 @@ namespace Unimmersive.Shell
 
             // Initalize start screen, needed for start button.
             _start = new StartScreen();
-            _startShown = false;
         }
 
         protected override void CustomClosing()

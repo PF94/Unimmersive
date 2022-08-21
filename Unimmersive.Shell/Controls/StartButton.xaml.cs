@@ -23,15 +23,13 @@ namespace Unimmersive.Shell.Controls
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Host._startShown)
+            if (!Host._start.IsVisible)
             {
                 Host._start.Show();
-                Host._startShown = true;
             }
             else
             {
                 Host._start.Hide();
-                Host._startShown = false;
             }
         }
     }

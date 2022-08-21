@@ -42,6 +42,7 @@ namespace Unimmersive.Shell.Start
                 tile.TileBox.Stroke = new SolidColorBrush(ColorMethods.SDColorToWMColor(colorBR));
                 tile.TileName.Foreground = new SolidColorBrush(ColorMethods.SDColorToWMColor(colorFG));
                 tile.TileName.Text = app.Name;
+                tile.Executable = app.ParsingName;
                 TilesPanel.Children.Add(tile);
             }
         }
