@@ -12,6 +12,8 @@
     <ContentControl>
         <DockPanel>
             <Controls:StartButton HorizontalAlignment="Left" VerticalAlignment="Center" Host="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+            <TextBlock TextAlignment="Center"><Run Text="Hello World!"/></TextBlock>
+            <Controls:UserTile HorizontalAlignment="Right" Width="40" Host="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
         </DockPanel>
      </ContentControl>
 </appbar:AppBarWindow>

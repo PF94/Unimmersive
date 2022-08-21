@@ -4,6 +4,7 @@ using ManagedShell.Interop;
 using System;
 using System.Windows;
 using Unimmersive.Shell.Start;
+using Unimmersive.Shell.UserTileWindow;
 
 namespace Unimmersive.Shell
 {
@@ -13,7 +14,8 @@ namespace Unimmersive.Shell
     public partial class Taskbar : AppBarWindow
     {
         public StartScreen _start;
-        public bool _startShown;
+        public TileMenu _tilemenu;
+
         public Taskbar(ShellManager shellManager, AppBarScreen screen, AppBarEdge edge, double desiredHeight)
             : base(shellManager.AppBarManager, shellManager.ExplorerHelper, shellManager.FullScreenHelper, screen, edge, desiredHeight)
         {
@@ -23,6 +25,9 @@ namespace Unimmersive.Shell
 
             // Initalize start screen, needed for start button.
             _start = new StartScreen();
+
+            // Initalize user tile window, needed for user tile button.
+            _tilemenu = new TileMenu();
         }
 
         protected override void CustomClosing()

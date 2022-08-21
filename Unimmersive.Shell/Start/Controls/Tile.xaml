@@ -19,7 +19,7 @@
                 <AccessText x:Name="TileName" TextWrapping="Wrap" Text="This is a placeholder name for a tile." Foreground="Red"/>
             </Label.Content>
         </Label>
-        <Image x:Name="TileIcon" Margin="10,10,85,86" Source="/Resources/iconplaceholder.png" Height="64"/>
+        <Image x:Name="TileIcon" Margin="10,10,85,86" Height="64"/>
     </Grid>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="MouseEnter">
